@@ -37,3 +37,6 @@ export PATH="$JAVA_HOME/bin:$PATH"
 
 # Added by Antigravity
 export PATH="/Users/john/.antigravity/antigravity/bin:$PATH"
+
+# Source local overrides (machine-specific config not tracked in dotfiles)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

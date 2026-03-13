@@ -1,5 +1,3 @@
-# Merge starship.remote.toml + starship.local.toml -> starship.toml
-python3 ~/.config/starship-merge.py 2>/dev/null
 export EDITOR="vim"
 export SUDO_EDITOR="$EDITOR"
 

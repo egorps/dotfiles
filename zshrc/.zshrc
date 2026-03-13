@@ -13,8 +13,6 @@ SAVEHIST=50000
 
 setopt inc_append_history
 
-source ~/miniconda3/bin/activate
-
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 

@@ -20,7 +20,7 @@ except ImportError:
 CONFIG_DIR = Path.home() / ".config"
 REMOTE = CONFIG_DIR / "starship.remote.toml"
 LOCAL = CONFIG_DIR / "starship.local.toml"
-OUTPUT = CONFIG_DIR / "starship.generated.toml"
+OUTPUT = CONFIG_DIR / "starship.toml"
 
 
 def deep_merge(base: dict, override: dict) -> dict:
@@ -44,6 +44,10 @@ def main():
         with open(LOCAL, "rb") as f:
             local = tomli.load(f)
         base = deep_merge(base, local)
+
+    # Remove stale stow symlink if present so we can write a regular file
+    if OUTPUT.is_symlink():
+        OUTPUT.unlink()
 
     with open(OUTPUT, "wb") as f:
         tomli_w.dump(base, f)

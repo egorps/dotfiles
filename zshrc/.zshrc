@@ -1,9 +1,5 @@
-# Merge starship config with local overrides (if ~/.config/starship.local.toml exists)
-_starship_cfg=$(python3 ~/.config/starship-merge.py 2>/dev/null)
-if [[ -n "$_starship_cfg" ]]; then
-  export STARSHIP_CONFIG="$_starship_cfg"
-fi
-unset _starship_cfg
+# Merge starship.remote.toml + starship.local.toml -> starship.toml
+python3 ~/.config/starship-merge.py 2>/dev/null
 export EDITOR="vim"
 export SUDO_EDITOR="$EDITOR"
 

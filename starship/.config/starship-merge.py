@@ -20,7 +20,7 @@ except ImportError:
 CONFIG_DIR = Path.home() / ".config"
 REMOTE = CONFIG_DIR / "starship.remote.toml"
 LOCAL = CONFIG_DIR / "starship.local.toml"
-OUTPUT = CONFIG_DIR / "starship.toml"
+OUTPUT = CONFIG_DIR / "starship.generated.toml"
 
 
 def deep_merge(base: dict, override: dict) -> dict:
